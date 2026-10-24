@@ -42,7 +42,7 @@ python tools/collect_baseline_nvidia.py --check --repo vllm
 
 Requires: CUDA GPU, `vllm`, `triton`, `ncu` (Nsight Compute). The collector scans `ops/<repo>/` (chosen by `--repo`, default `vllm`), falling back to `baseline_shape.yaml`; on name clashes, the op module wins.
 
-`ops/flagtrain/` collects FlagTrain benchmark's **NVIDIA baseline** (`lamb` uses DeepSpeed `fused_lamb`; requires `deepspeed`, and the op is skipped when it cannot load). It does not collect FlagTrain's own Triton implementation.
+`ops/flagtrain/` collects FlagTrain benchmark's **NVIDIA baseline** for lamb, lion, mixed_moe_gemm, wf6af16_linear, packbits, unpackbits, blocked_flash, evoformer_attn and quick_gelu (forward and backward). It does not collect FlagTrain's own Triton implementation. Like `ops/vllm/`, each module is self-contained and depends only on torch/deepspeed/megatron -- it does **not** import FlagTrain; shapes, input builders and baseline selection are copied into the module, so keep them in sync when the benchmark changes. If the operator's DeepSpeed/Megatron baseline cannot be loaded, the module raises instead of collecting a torch fallback. See [ops/flagtrain/README.md](ops/flagtrain/README.md).
 
 See [ops/pytorch/README.md](ops/pytorch/README.md) for the pinned FlagGems kernelgen-dev PyTorch baseline catalog, source/shape conventions, validation, and deferred operators.
 

@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""lamb 的 NVIDIA 基线：DeepSpeed fused_lamb。
+"""NVIDIA baseline for lamb: DeepSpeed fused_lamb.
 
-采集的是 FlagTrain benchmark 在 NVIDIA 上使用的基线实现，而不是 FlagTrain
-自己的 Triton kernel：
+This collects the baseline implementation the FlagTrain benchmark uses on
+NVIDIA, not FlagTrain's own Triton kernel:
 
     FlagTrain/benchmark/deepspeed/test_lamb.py
         _DEEPSPEED_BASELINE_VENDORS = {"nvidia", "hygon"}
@@ -23,29 +23,30 @@
         _call(lamb, p, p_copy, m, v, g, lr, beta1, beta2, max_coeff,
               min_coeff, eps, grad_scale, step, mode, bias_correction, decay)
 
-    DeepSpeed 侧源码路径（随版本变化，需回源码核对）：
+    DeepSpeed source paths (these move between versions; check the source):
         deepspeed/ops/op_builder/fused_lamb.py
         deepspeed/ops/fused_lamb.py
 
-fused_lamb 一次调用内部启动 3 个 CUDA kernel（part1/part2/part3），因此 NCU
-记录里的 per_kernel 应有 3 条明细。
+One fused_lamb call launches three CUDA kernels internally (part1/part2/part3),
+so the NCU per_kernel list should contain three entries.
 
-DeepSpeed 不可用时 native() 返回 None，采集器会跳过该算子——**不会**回退到
-FlagTrain 的 torch 参考实现 lamb_ref。FlagTrain benchmark 在 DeepSpeed 装载
-失败时确实会回退到 lamb_ref；若要采集“与该回退一致的基线”，应另建一个模块
-显式返回 lamb_ref，而不是让本模块静默换实现。
+When DeepSpeed is unavailable native() raises, so the collector does **not**
+collect this operator's baseline and does not fall back to FlagTrain's torch
+reference lamb_ref.
 
-输入构造复刻 FlagTrain 的 lamb_input_fn：
+The input construction mirrors FlagTrain's lamb_input_fn:
     p = randn(N); p_copy = empty(0); m = zeros(N); v = zeros(N); g = randn(N)
-超参数与 test_lamb.py 的 _LR/_BETA1/... 保持一致。
-shape 来源：test_lamb.py::_LAMB_SHAPES（7 个 1D 长度）。
+Hyperparameters match _LR/_BETA1/... in test_lamb.py.
+Shapes come from test_lamb.py::_LAMB_SHAPES (seven 1-D lengths).
 
-运行前提：
-    - NVIDIA GPU，且 NCU 有性能计数器权限（否则 U/瓶颈为空）；
-    - DeepSpeed 已安装（首次 load 会 JIT 编译，耗时数分钟，之后走缓存）；
-    - 采集机与 --reference-chip 一致（默认 H800）。
+Requirements:
+    - an NVIDIA GPU with NCU performance-counter permission (otherwise units /
+      bottleneck are empty);
+    - DeepSpeed installed (the first load JIT-compiles for several minutes,
+      then uses the cache);
+    - the collection machine matches --reference-chip (H800 by default).
 
-用法：
+Usage:
     python tools/collect_baseline_nvidia.py --check --repo flagtrain --ops lamb
     python tools/collect_baseline_nvidia.py --repo flagtrain --ops lamb \
         --output op_flagtrain_lamb_h800_baseline.json --device 0
@@ -84,7 +85,7 @@ _DECAY = 0.01
 
 
 def native():
-    """Resolve DeepSpeed's fused_lamb, or None when it cannot be loaded.
+    """Resolve DeepSpeed's fused_lamb; raise when it cannot be loaded.
 
     The JIT build is cached under TORCH_EXTENSIONS_DIR, so the first call is
     slow and later worker/NCU subprocesses reuse the build.
@@ -93,9 +94,12 @@ def native():
         from deepspeed.ops.op_builder import FusedLambBuilder
 
         return FusedLambBuilder().load().lamb
-    except Exception as exc:  # noqa: BLE001 - collector skips the op on failure
-        print(f"lamb: DeepSpeed fused_lamb unavailable, skipping: {exc!r}")
-        return None
+    except Exception as exc:
+        raise RuntimeError(
+            "lamb baseline requires DeepSpeed's fused_lamb, which could not be "
+            f"loaded: {exc!r}. Install deepspeed and ensure its CUDA extension "
+            "builds on this machine."
+        ) from exc
 
 
 def grid():

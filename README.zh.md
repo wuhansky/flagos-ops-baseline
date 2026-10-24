@@ -47,7 +47,7 @@ python tools/collect_baseline_nvidia.py --check --repo vllm
 
 依赖：CUDA GPU、`vllm`、`triton`、`ncu`(Nsight Compute)。采集器扫描 `ops/<repo>/`（由 `--repo` 选择，缺省 `vllm`），其余算子回落到 `baseline_shape.yaml`；两者同名时以算子模块为准。
 
-`ops/flagtrain/` 采集 FlagTrain benchmark 在 NVIDIA 上的**基线实现**（`lamb` 用 DeepSpeed `fused_lamb`，需要安装 `deepspeed`；DeepSpeed 不可用时该算子会被跳过）。它不是 FlagTrain 自己的 Triton 实现。
+`ops/flagtrain/` 采集 FlagTrain benchmark 在 NVIDIA 上的**基线实现**，覆盖 lamb、lion、mixed_moe_gemm、wf6af16_linear、packbits、unpackbits、blocked_flash、evoformer_attn、quick_gelu（含 backward）；它不是 FlagTrain 自己的 Triton 实现。模块像 `ops/vllm/` 一样自包含，只依赖 torch/deepspeed/megatron，**不 import FlagTrain**；shape、输入构造和基线选择复制在模块内，benchmark 改动时需同步。对应算子缺少 DeepSpeed/Megatron 时模块直接抛错，不收集基线、也不回退到 torch 组合。模块清单和运行方式见 [ops/flagtrain/README.md](ops/flagtrain/README.md)。
 
 `--repo` 决定去 `ops/` 下哪个子目录找算子（`vllm` / `sglang` …），缺省 `vllm`。`--ops` / `--whitelist` / `--blacklist` 可组合使用：算子被保留需同时满足「在 `--ops` 内（若指定）」「在白名单内（若指定）」「不在黑名单内」。名单中的未知算子名会打印告警但不报错。
 
