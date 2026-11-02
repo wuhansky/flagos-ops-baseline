@@ -757,7 +757,7 @@
   "chunk_gated_delta_rule_fwd": {
     "native_api": "ops.chunk_gated_delta_rule_fwd",
     "shapes": {
-      "qwen36-v2-8a89a0d11f0df5a8b2307ce7a15f8f3bd71ebde2a833ec394f991c0422583487": {
+      "sglang-v2-8a89a0d11f0df5a8b2307ce7a15f8f3bd71ebde2a833ec394f991c0422583487": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -890,12 +890,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "q": "torch.bfloat16",
@@ -1036,7 +1041,7 @@
           }
         }
       },
-      "qwen36-v2-a286ec58424d5b7bf8c100d41d76c9d3f3bc822b4782b7fbabb04b42e9f2fec9": {
+      "sglang-v2-a286ec58424d5b7bf8c100d41d76c9d3f3bc822b4782b7fbabb04b42e9f2fec9": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -1169,12 +1174,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "q": "torch.bfloat16",
@@ -1320,7 +1330,7 @@
   "_fused_moe_kernel_sequence": {
     "native_api": "ops.fused_moe_kernel_sequence",
     "shapes": {
-      "qwen36-v2-2915c7e890a5374bdaf1d9bc817eb3ec01c2631b855b471e3c514150fedeeef2": {
+      "sglang-v2-2915c7e890a5374bdaf1d9bc817eb3ec01c2631b855b471e3c514150fedeeef2": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -1506,12 +1516,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "hidden_states": "torch.bfloat16",
@@ -1626,7 +1641,7 @@
           }
         }
       },
-      "qwen36-v2-3fb1ae614fdb3c14886ab842d1367e0c91aa7092c7d1ca9e0e1c0e78e2b7fa2a": {
+      "sglang-v2-3fb1ae614fdb3c14886ab842d1367e0c91aa7092c7d1ca9e0e1c0e78e2b7fa2a": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -1812,12 +1827,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "hidden_states": "torch.bfloat16",
@@ -1937,7 +1957,7 @@
   "fused_recurrent_gated_delta_rule_packed_decode": {
     "native_api": "ops.fused_recurrent_gated_delta_rule_packed_decode",
     "shapes": {
-      "qwen36-v2-c4ef433b93639b1de65c3202b67f12edcc21016e319ef8d2dcef57810eb4f7f2": {
+      "sglang-v2-c4ef433b93639b1de65c3202b67f12edcc21016e319ef8d2dcef57810eb4f7f2": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2047,12 +2067,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "mixed_qkv": "torch.bfloat16",
@@ -2125,7 +2150,7 @@
           }
         }
       },
-      "qwen36-v2-6b8c949fd8d07966a4628a24a61552f163aa78954455fc151865680e871adaf5": {
+      "sglang-v2-6b8c949fd8d07966a4628a24a61552f163aa78954455fc151865680e871adaf5": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2235,12 +2260,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "mixed_qkv": "torch.bfloat16",
@@ -2318,7 +2348,7 @@
   "gemma_fused_add_rmsnorm": {
     "native_api": "ops.gemma_fused_add_rmsnorm",
     "shapes": {
-      "qwen36-v2-c97c757a676da06fabdfab4c2ff1b7a42b48657457703466b87a0d9689ac0efb": {
+      "sglang-v2-c97c757a676da06fabdfab4c2ff1b7a42b48657457703466b87a0d9689ac0efb": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2364,12 +2394,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -2433,7 +2468,7 @@
           }
         }
       },
-      "qwen36-v2-454566ab781dfe123271b8c10c5699aa751fadbe3c879ecaa6cacf0e3c2fe7e6": {
+      "sglang-v2-454566ab781dfe123271b8c10c5699aa751fadbe3c879ecaa6cacf0e3c2fe7e6": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2479,12 +2514,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -2548,7 +2588,7 @@
           }
         }
       },
-      "qwen36-v2-dddf608f5799404a7d81a894dd11e50c638f3126112aa10c454c996dafe6cccd": {
+      "sglang-v2-dddf608f5799404a7d81a894dd11e50c638f3126112aa10c454c996dafe6cccd": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2594,12 +2634,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -2663,7 +2708,7 @@
           }
         }
       },
-      "qwen36-v2-58f3f6a1a1f145cb80c9a418bd47d91ccbf2966086706175a8c71c9d66d24507": {
+      "sglang-v2-58f3f6a1a1f145cb80c9a418bd47d91ccbf2966086706175a8c71c9d66d24507": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2709,12 +2754,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -2783,7 +2833,7 @@
   "gemma_rmsnorm": {
     "native_api": "ops.gemma_rmsnorm",
     "shapes": {
-      "qwen36-v1-0d363d1ad16d38f2745b5d16f39effe8103b6460a5a511d3bf924886285e4c70": {
+      "sglang-v1-0d363d1ad16d38f2745b5d16f39effe8103b6460a5a511d3bf924886285e4c70": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2820,12 +2870,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 20,
               "role": "hidden",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -2883,7 +2938,7 @@
           }
         }
       },
-      "qwen36-v1-b1930f3ad0838224e482b38b94888c7429c83e23809b47d09602fd326958ead0": {
+      "sglang-v1-b1930f3ad0838224e482b38b94888c7429c83e23809b47d09602fd326958ead0": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -2920,12 +2975,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 20,
               "role": "q",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -2983,7 +3043,7 @@
           }
         }
       },
-      "qwen36-v1-e5127e312629f507e2541988b1caaab1bee7b93766e10919458791b2d92796a0": {
+      "sglang-v1-e5127e312629f507e2541988b1caaab1bee7b93766e10919458791b2d92796a0": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3020,12 +3080,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 20,
               "role": "k",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3087,7 +3152,7 @@
           }
         }
       },
-      "qwen36-v1-f9bdb3dcdd9b2f8a03cfe5ba8546461e8681e873876eca594f5320652f3ef38e": {
+      "sglang-v1-f9bdb3dcdd9b2f8a03cfe5ba8546461e8681e873876eca594f5320652f3ef38e": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3124,12 +3189,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 1,
               "role": "hidden",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3187,7 +3257,7 @@
           }
         }
       },
-      "qwen36-v1-12cf8886db345e79babca639a2af3c7ab32e8cf78e24bc39161f27decef3deac": {
+      "sglang-v1-12cf8886db345e79babca639a2af3c7ab32e8cf78e24bc39161f27decef3deac": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3224,12 +3294,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 1,
               "role": "q",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3287,7 +3362,7 @@
           }
         }
       },
-      "qwen36-v1-f21fdc5f87fed7f6a7edb3f7c75cb2d8fcb5c1170f12a9811d1662cebdedac3d": {
+      "sglang-v1-f21fdc5f87fed7f6a7edb3f7c75cb2d8fcb5c1170f12a9811d1662cebdedac3d": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3324,12 +3399,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 1,
               "role": "k",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3391,7 +3471,7 @@
           }
         }
       },
-      "qwen36-v1-1844c76fe075ed9b3364ed36c7ce8a6306784b6e06c4fcb4d2b62d09178b5df4": {
+      "sglang-v1-1844c76fe075ed9b3364ed36c7ce8a6306784b6e06c4fcb4d2b62d09178b5df4": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3428,12 +3508,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "hidden",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3491,7 +3576,7 @@
           }
         }
       },
-      "qwen36-v1-e9360543ad3becec65b9127f8e01e124081fa8c91e68a2d4e3c2f6e7b3f078ad": {
+      "sglang-v1-e9360543ad3becec65b9127f8e01e124081fa8c91e68a2d4e3c2f6e7b3f078ad": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3528,12 +3613,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "q",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3591,7 +3681,7 @@
           }
         }
       },
-      "qwen36-v1-05f706300a11e2194181e8dfc03bf1cc9e63d86db551c76797ad4799d98a4b2a": {
+      "sglang-v1-05f706300a11e2194181e8dfc03bf1cc9e63d86db551c76797ad4799d98a4b2a": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3628,12 +3718,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "k",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3695,7 +3790,7 @@
           }
         }
       },
-      "qwen36-v1-4537386831c0321fd997941c384e62be0fbcb7b888ce87563e5ad1e6a9a4c17b": {
+      "sglang-v1-4537386831c0321fd997941c384e62be0fbcb7b888ce87563e5ad1e6a9a4c17b": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3732,12 +3827,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "hidden",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3795,7 +3895,7 @@
           }
         }
       },
-      "qwen36-v1-4012ca254c1d3fd1b7706ea4734f960fe9f7381400232d9aac9264a542870fb2": {
+      "sglang-v1-4012ca254c1d3fd1b7706ea4734f960fe9f7381400232d9aac9264a542870fb2": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3832,12 +3932,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "q",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -3895,7 +4000,7 @@
           }
         }
       },
-      "qwen36-v1-7ee8316f235f273cb8c304e5dca7560571eb8f940cb7fc7d4a7ccee6437a46c1": {
+      "sglang-v1-7ee8316f235f273cb8c304e5dca7560571eb8f940cb7fc7d4a7ccee6437a46c1": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -3932,12 +4037,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "k",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -4004,7 +4114,7 @@
   "select_experts": {
     "native_api": "ops.select_experts",
     "shapes": {
-      "qwen36-v1-36c9716365299f7cec2eee9c06b4cb02fe8585ef6d7bbfd40f8fcfb42374ed10": {
+      "sglang-v1-36c9716365299f7cec2eee9c06b4cb02fe8585ef6d7bbfd40f8fcfb42374ed10": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -4061,12 +4171,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "hidden_states": "torch.bfloat16",
@@ -4144,7 +4259,7 @@
           }
         }
       },
-      "qwen36-v1-5261af0a0d76fed8fd5d23f4256b25fb3f0316cf7c976ab17ac9b37b2403984e": {
+      "sglang-v1-5261af0a0d76fed8fd5d23f4256b25fb3f0316cf7c976ab17ac9b37b2403984e": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -4201,12 +4316,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "hidden_states": "torch.bfloat16",
@@ -4289,7 +4409,7 @@
   "silu_and_mul_out": {
     "native_api": "ops.silu_and_mul_out",
     "shapes": {
-      "qwen36-v1-3f6cd76735a0f25796bb0b339b113c58b7c8af6d26986c57d9615f589b834732": {
+      "sglang-v1-3f6cd76735a0f25796bb0b339b113c58b7c8af6d26986c57d9615f589b834732": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -4319,12 +4439,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -4379,7 +4504,7 @@
           }
         }
       },
-      "qwen36-v1-1eb8c14e93e5d6acffa8da7afe1e68ca53107292f8462294cb06da9f6ab061e7": {
+      "sglang-v1-1eb8c14e93e5d6acffa8da7afe1e68ca53107292f8462294cb06da9f6ab061e7": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -4409,12 +4534,17 @@
               }
             },
             "parameters": {
-              "model": "27b",
+              "hidden": 5120,
+              "q_heads": 6,
+              "value_heads": 12,
+              "pool": 1381,
+              "silu_width": 8704,
+              "k_stride": 3584,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -4469,7 +4599,7 @@
           }
         }
       },
-      "qwen36-v1-800e062b15fec740031ff2cfa54254355811fa5072c751d55bf74fa5281eb6d6": {
+      "sglang-v1-800e062b15fec740031ff2cfa54254355811fa5072c751d55bf74fa5281eb6d6": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -4499,12 +4629,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -4559,7 +4694,7 @@
           }
         }
       },
-      "qwen36-v1-aecd85a9393996326c94c2ea36aa72ce6e1887a6e4f51b7d6e4b6bc60b0bf0f0": {
+      "sglang-v1-aecd85a9393996326c94c2ea36aa72ce6e1887a6e4f51b7d6e4b6bc60b0bf0f0": {
         "torch.bfloat16": {
           "config": {
             "inputs": {
@@ -4589,12 +4724,17 @@
               }
             },
             "parameters": {
-              "model": "35b",
+              "hidden": 2048,
+              "q_heads": 4,
+              "value_heads": 8,
+              "pool": 3193,
+              "silu_width": 256,
+              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
-              "variant": "documented",
-              "source": "SGLang v0.5.11; Qwen3.6 TP=4 workload",
+              "variant": "core",
+              "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
                 "input": "torch.bfloat16",
@@ -4690,5 +4830,13 @@
     },
     "functional_probe_cases": 16,
     "functional_probe_calls_per_case": 8
+  },
+  "_key_migration": {
+    "schema": "sglang.operator-key-migration/v1",
+    "previous_artifact_sha256": "53f827df2787bb549564014c7e4f14fb6eb9e8d0cb84d6ed06179d1adf2ba69d",
+    "renamed_keys": 28,
+    "geometry_hash_unchanged": true,
+    "config_parameters": "Explicit dimensions replace source-model labels; measured input geometry and every timing/counter value are unchanged.",
+    "provenance": "Original collection metadata, source hashes and report paths are retained verbatim."
   }
 }
