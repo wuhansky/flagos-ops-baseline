@@ -62,3 +62,16 @@ def test_profiles_are_discoverable_by_the_real_collector():
     assert len(found) == 7
     assert all(callable(module.native) for module in found.values())
     assert all(module.BENCH_RETURN_MODE == "median" for module in found.values())
+
+
+def test_gdn_reported_head_counts_cannot_contradict_tensor_geometry():
+    if not os.environ.get("FLAGGEMS_SGLANG_SOURCE"):
+        pytest.skip("set FLAGGEMS_SGLANG_SOURCE for paired source validation")
+    operator = "chunk_gated_delta_rule_fwd"
+    for row in _sglang_profiles.grid(operator):
+        cfg = _sglang_profiles.config(operator, row, torch.bfloat16)
+        params = cfg["parameters"]
+        q_heads = cfg["inputs"]["q"]["shape"][-2]
+        v_heads = cfg["inputs"]["v"]["shape"][-2]
+        assert params.get("q_heads", q_heads) == q_heads
+        assert params.get("value_heads", v_heads) == v_heads

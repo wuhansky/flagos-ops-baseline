@@ -890,16 +890,11 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 20,
               "role": "default",
               "seed": 0,
               "variant": "core",
+              "pool": 1381,
               "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
@@ -1174,16 +1169,11 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
               "variant": "core",
+              "pool": 3193,
               "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
@@ -1516,12 +1506,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
@@ -1827,12 +1811,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
@@ -2067,16 +2045,11 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 1,
               "role": "default",
               "seed": 0,
               "variant": "core",
+              "pool": 1381,
               "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
@@ -2260,16 +2233,11 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
               "variant": "core",
+              "pool": 3193,
               "source": "SGLang v0.5.11 operator ABI",
               "input_distribution": "seeded FP32 N(0,0.5), cast to BF16; see builder for weights/gates",
               "input_dtypes": {
@@ -2394,12 +2362,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 20,
               "role": "default",
               "seed": 0,
@@ -2514,12 +2476,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 1,
               "role": "default",
               "seed": 0,
@@ -2634,12 +2590,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
@@ -2754,12 +2704,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
@@ -2870,12 +2814,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 20,
               "role": "hidden",
               "seed": 0,
@@ -2975,12 +2913,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 20,
               "role": "q",
               "seed": 0,
@@ -3080,12 +3012,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 20,
               "role": "k",
               "seed": 0,
@@ -3189,12 +3115,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 1,
               "role": "hidden",
               "seed": 0,
@@ -3294,12 +3214,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 1,
               "role": "q",
               "seed": 0,
@@ -3399,12 +3313,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 1,
               "role": "k",
               "seed": 0,
@@ -3508,12 +3416,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "hidden",
               "seed": 0,
@@ -3613,12 +3515,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "q",
               "seed": 0,
@@ -3718,12 +3614,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "k",
               "seed": 0,
@@ -3827,12 +3717,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "hidden",
               "seed": 0,
@@ -3932,12 +3816,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "q",
               "seed": 0,
@@ -4037,12 +3915,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "k",
               "seed": 0,
@@ -4171,12 +4043,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
@@ -4316,12 +4182,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
@@ -4439,12 +4299,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 20,
               "role": "default",
               "seed": 0,
@@ -4534,12 +4388,6 @@
               }
             },
             "parameters": {
-              "hidden": 5120,
-              "q_heads": 6,
-              "value_heads": 12,
-              "pool": 1381,
-              "silu_width": 8704,
-              "k_stride": 3584,
               "tokens": 1,
               "role": "default",
               "seed": 0,
@@ -4629,12 +4477,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 20,
               "role": "default",
               "seed": 0,
@@ -4724,12 +4566,6 @@
               }
             },
             "parameters": {
-              "hidden": 2048,
-              "q_heads": 4,
-              "value_heads": 8,
-              "pool": 3193,
-              "silu_width": 256,
-              "k_stride": 2560,
               "tokens": 1,
               "role": "default",
               "seed": 0,
