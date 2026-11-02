@@ -1,6 +1,6 @@
 # Copyright 2026 FlagOS Contributors
 # SPDX-License-Identifier: Apache-2.0
-"""Pinned source adapters shared by Qwen3.6 native recipes."""
+"""Pinned source adapters shared by operator native recipes."""
 import hashlib
 import importlib.util
 import os
@@ -13,8 +13,8 @@ def common():
     source = os.environ.get("FLAGGEMS_SGLANG_SOURCE")
     if not source:
         raise RuntimeError("Set FLAGGEMS_SGLANG_SOURCE to the pinned workload checkout")
-    path = Path(source) / "verification/qwen36_common.py"
-    spec = importlib.util.spec_from_file_location("_baseline_qwen36", path)
+    path = Path(source) / "verification/operator_common.py"
+    spec = importlib.util.spec_from_file_location("_baseline_operator", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -60,7 +60,7 @@ def config(operator, row, dtype):
 
         return dict(scalar=asdict(value) if is_dataclass(value) else value)
 
-    path = helper.ROOT / "src/flaggems_sglang/testing/qwen36_workloads.py"
+    path = helper.ROOT / "src/flaggems_sglang/testing/operator_workloads.py"
     return dict(
         inputs={name: describe(value) for name, value in values.items()},
         parameters=cases.parameters(operator, row),

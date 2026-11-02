@@ -1,4 +1,4 @@
-# Qwen3.6 mrotary_embedding on H800
+# mrotary_embedding on H800
 
 The recipe `ops/sglang/mrotary_embedding.py` collects the **native SGLang
 v0.5.11 Triton** implementation retained in FlagGems-sglang. It does not import a
@@ -67,5 +67,5 @@ median contract. Every native invocation restores q/k before cache preparation;
 restoration and cache work stay outside timing events and NCU capture. The
 snapshot was recollected with the same pinned native source and current H800
 Torch/Triton environment recorded in `_environment`. See
-`reset_timing_validation.json` for the 34-record combined collection and seven
+`validation/reset_timing_validation.json` for the 34-record combined collection and seven
 backend pipeline checks. Old v2 records cannot match the refreshed keys.

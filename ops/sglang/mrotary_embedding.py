@@ -1,6 +1,6 @@
 # Copyright 2026 FlagOS Contributors
 # SPDX-License-Identifier: Apache-2.0
-"""Qwen3.6 six-case mRoPE baseline, original SGLang v0.5.11 Triton.
+"""Six-case mRoPE baseline, original SGLang v0.5.11 Triton.
 
 Set FLAGGEMS_SGLANG_SOURCE to the checkout containing the native reference and
 workload builders. No installed SGLang fallback is allowed: its ABI/version may
