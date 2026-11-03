@@ -1,3 +1,5 @@
+> Current data location: the native ATen entries from this PR are now in `op_pytorch_h800_perf_baseline.json`. See `docs/aten-baseline-pr29.md` for exact source/key selection. Standalone names and hashes below describe the immutable original collection.
+
 # Sparse softmax native H800 baselines
 
 This feature covers `_sparse_softmax` and `_sparse_softmax_backward_data` only.
