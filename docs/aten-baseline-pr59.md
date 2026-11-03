@@ -53,3 +53,16 @@ existing digest-based readers without guessing JSON serialization. Mixed-source
 raw evidence retains its historical complete contents; only the selected native
 entries are exposed as imported operator records. A reader must verify the
 original digest and compare those entries with the indexed unified records.
+
+## Main integration
+
+No selector (or `OPS_BASELINE_LDEXP_OUT_CURRENT_CORE=0`) retains main's
+historical-plus-appended default profile, including its original keys/configs.
+`OPS_BASELINE_LDEXP_OUT_CURRENT_CORE=1` selects the separate original five-case
+`current-seed0-out` profile. All shape/dtype combinations and the real ATen out
+callable are preserved. Input/config equivalence was checked against both
+pre-merge producers; stored baseline measurements were not regenerated.
+
+The final profile compatibility check also corrects median's selected-profile
+source description, so its historical catalog reports its original source
+rather than the default union profile's source.
