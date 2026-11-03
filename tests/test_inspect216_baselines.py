@@ -3,6 +3,8 @@
 """CPU/meta contracts for the explicit extensions, separate from frozen recipes."""
 
 import importlib
+import importlib.util
+import os
 import json
 from pathlib import Path
 import sys
@@ -34,7 +36,18 @@ class Inspect216BaselineTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.manifest = json.loads((OPS / "_inspect216_manifest.json").read_text())
-        cls.modules = {name: importlib.import_module(name) for name in EXPECTED}
+        cls.modules = {}
+        for name in EXPECTED:
+            if name == "_scaled_dot_product_flash_attention":
+                spec = importlib.util.spec_from_file_location(
+                    "inspect216_sdpa_profile", OPS / (name + ".py")
+                )
+                module = importlib.util.module_from_spec(spec)
+                with mock.patch.dict(os.environ, {"OPS_BASELINE_SDPA_INSPECT216": "1"}):
+                    spec.loader.exec_module(module)
+                cls.modules[name] = module
+            else:
+                cls.modules[name] = importlib.import_module(name)
 
     def assert_input_descriptor(self, actual, expected):
         if isinstance(actual, torch.Tensor):

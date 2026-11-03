@@ -56,3 +56,16 @@ existing digest-based readers without guessing JSON serialization. Mixed-source
 raw evidence retains its historical complete contents; only the selected native
 entries are exposed as imported operator records. A reader must verify the
 original digest and compare those entries with the indexed unified records.
+
+## Main integration
+
+The default `_scaled_dot_product_flash_attention` producer retains main's
+9-recipe Enflame profile. Set `OPS_BASELINE_SDPA_INSPECT216=1` to collect the
+separate 15-recipe inspect216 catalog. Original case keys, input recipes and
+source bindings are retained within each profile; the profiles are not mixed.
+The inspect216 contract suite explicitly selects that profile.
+
+The collector retains custom `measure_latency`, reset, and prepared-sample
+paths. A recipe declaring multiple protocols or a custom timer together with
+a return-mode override is rejected before resolving its native callable.
+No stored timing values were regenerated during integration.
