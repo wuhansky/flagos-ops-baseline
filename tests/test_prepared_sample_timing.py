@@ -271,6 +271,18 @@ class PreparedSampleTests(unittest.TestCase):
 
 
 class CurrentMainCompatibilityTests(unittest.TestCase):
+    def test_conflicting_preparation_protocols_fail_before_native_resolution(self):
+        h = Harness()
+        ns = h.load()
+        op = types.SimpleNamespace(
+            OP_NAME="test_out", prepare_sample=h.prepare,
+            make_input_reset=lambda *a: None,
+            native=lambda: self.fail("must reject ambiguous timing before resolve"),
+        )
+        with self.assertRaisesRegex(ValueError, "cannot be combined"):
+            ns["_collect_one_op_ops"](op, False, None)
+        self.assertEqual(h.log, [])
+
     def test_nonhook_return_mode_is_forwarded(self):
         h = Harness()
         module = h.load()
