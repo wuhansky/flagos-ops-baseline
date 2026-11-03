@@ -8,7 +8,24 @@ claimed to come from a production workload. Keys are `[H, W]` within this
 fixed contract. Mask/channel/output-dtype variants require distinct keys.
 
 Build OpenCV and opencv_contrib at the same version with CUDA enabled and
-modules core/cudev/cudaarithm. A non-CUDA OpenCV build will fail preflight;
+modules core/cudev/cudaarithm. For example, with both official 4.12.0 release
+sources extracted (adjust CUDA_ARCH_BIN for the actual device):
+
+```sh
+cmake -S /path/to/opencv-4.12.0 -B /tmp/opencv-build -G Ninja \
+  -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/path/to/opencv-install \
+  -DOPENCV_EXTRA_MODULES_PATH=/path/to/opencv_contrib-4.12.0/modules \
+  -DBUILD_LIST=core,cudev,cudaarithm -DWITH_CUDA=ON \
+  -DCUDA_ARCH_BIN=9.0 -DCUDA_ARCH_PTX= \
+  -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_EXAMPLES=OFF \
+  -DBUILD_opencv_python3=OFF -DWITH_IPP=OFF -DWITH_ITT=OFF
+cmake --build /tmp/opencv-build -j4
+cmake --install /tmp/opencv-build
+```
+
+OpenCV 4.12.0 tag: `cbee6841638edb6fbc8110df7cd52bb8e3d66211`;
+opencv_contrib tag: `7deb35fde4d38d73b6173c7ab2aeddc8df5a89e3`.
+A non-CUDA OpenCV build will fail preflight;
 there is no CPU fallback. Then build the small bridge in this directory:
 
 ```sh
