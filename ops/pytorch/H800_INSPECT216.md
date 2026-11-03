@@ -1,3 +1,5 @@
+> Current data location: the native ATen entries from this PR are now in `op_pytorch_h800_perf_baseline.json`. See `docs/aten-baseline-pr32.md` for exact source/key selection. Standalone names and hashes below describe the immutable original collection.
+
 # H800 snapshots for inspect-repair references
 
 These snapshots preserve the original FlagGems core recipes used in the
