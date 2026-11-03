@@ -11,6 +11,7 @@ import tempfile
 from pathlib import Path
 import sys
 import unittest
+from unittest import mock
 
 import torch
 
@@ -154,7 +155,8 @@ print(json.dumps(result))
             path = OPS / (info.get("module", name) + ".py")
             spec = importlib.util.spec_from_file_location("baseline_test_" + name, path)
             module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
+            with mock.patch.dict(os.environ, info.get("producer_selector", {})):
+                spec.loader.exec_module(module)
             cls.modules[name] = module
 
     def test_inventory_and_source_provenance_match_files(self):

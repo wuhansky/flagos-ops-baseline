@@ -705200,5 +705200,1162 @@
         }
       }
     }
+  ],
+  "median": [
+    {
+      "shape": [
+        2
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            2
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            2
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            2
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            2
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            2
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        64
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            64
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            64
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            64
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            64
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            64
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        65
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  65
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            65
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  65
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            65
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  65
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            65
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  65
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            65
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  65
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            65
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        128
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            128
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            128
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            128
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            128
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            128
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        256
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            256
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            256
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            256
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            256
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            256
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        257
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  257
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            257
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  257
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            257
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  257
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            257
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  257
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            257
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  257
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            257
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        1024
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            1024
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            1024
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            1024
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            1024
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            1024
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        4096
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4096
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4096
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4096
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4096
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4096
+          ],
+          "scope": "core"
+        }
+      }
+    },
+    {
+      "shape": [
+        4,
+        8,
+        16,
+        8
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4,
+                  8,
+                  16,
+                  8
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1024,
+                  128,
+                  8,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4,
+            8,
+            16,
+            8
+          ],
+          "scope": "core"
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4,
+                  8,
+                  16,
+                  8
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1024,
+                  128,
+                  8,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4,
+            8,
+            16,
+            8
+          ],
+          "scope": "core"
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4,
+                  8,
+                  16,
+                  8
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1024,
+                  128,
+                  8,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4,
+            8,
+            16,
+            8
+          ],
+          "scope": "core"
+        },
+        "torch.int16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4,
+                  8,
+                  16,
+                  8
+                ],
+                "dtype": "torch.int16",
+                "stride": [
+                  1024,
+                  128,
+                  8,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4,
+            8,
+            16,
+            8
+          ],
+          "scope": "core"
+        },
+        "torch.int32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4,
+                  8,
+                  16,
+                  8
+                ],
+                "dtype": "torch.int32",
+                "stride": [
+                  1024,
+                  128,
+                  8,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "benchmark": "benchmark/test_median.py",
+          "descriptor": [
+            4,
+            8,
+            16,
+            8
+          ],
+          "scope": "core"
+        }
+      }
+    }
   ]
 }
