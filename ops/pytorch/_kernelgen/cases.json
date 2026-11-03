@@ -702686,5 +702686,2519 @@
         }
       }
     }
+  ],
+  "softplus_backward": [
+    {
+      "shape": [
+        1073741824
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    1073741824
+                  ],
+                  "dtype": "torch.float16",
+                  "stride": [
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            1073741824
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    1073741824
+                  ],
+                  "dtype": "torch.float32",
+                  "stride": [
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            1073741824
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1073741824
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    1073741824
+                  ],
+                  "dtype": "torch.bfloat16",
+                  "stride": [
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            1073741824
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        }
+      }
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    64,
+                    64
+                  ],
+                  "dtype": "torch.float16",
+                  "stride": [
+                    64,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            64,
+            64
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    64,
+                    64
+                  ],
+                  "dtype": "torch.float32",
+                  "stride": [
+                    64,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            64,
+            64
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  64,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    64,
+                    64
+                  ],
+                  "dtype": "torch.bfloat16",
+                  "stride": [
+                    64,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            64,
+            64
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        }
+      }
+    },
+    {
+      "shape": [
+        4096,
+        4096
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    4096,
+                    4096
+                  ],
+                  "dtype": "torch.float16",
+                  "stride": [
+                    4096,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            4096,
+            4096
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    4096,
+                    4096
+                  ],
+                  "dtype": "torch.float32",
+                  "stride": [
+                    4096,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            4096,
+            4096
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  4096,
+                  4096
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  4096,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    4096,
+                    4096
+                  ],
+                  "dtype": "torch.bfloat16",
+                  "stride": [
+                    4096,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            4096,
+            4096
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        }
+      }
+    },
+    {
+      "shape": [
+        64,
+        512,
+        512
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    64,
+                    512,
+                    512
+                  ],
+                  "dtype": "torch.float16",
+                  "stride": [
+                    262144,
+                    512,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            64,
+            512,
+            512
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    64,
+                    512,
+                    512
+                  ],
+                  "dtype": "torch.float32",
+                  "stride": [
+                    262144,
+                    512,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            64,
+            512,
+            512
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  64,
+                  512,
+                  512
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  262144,
+                  512,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    64,
+                    512,
+                    512
+                  ],
+                  "dtype": "torch.bfloat16",
+                  "stride": [
+                    262144,
+                    512,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            64,
+            512,
+            512
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        }
+      }
+    },
+    {
+      "shape": [
+        1024,
+        1024,
+        1024
+      ],
+      "variant": 0,
+      "config": {
+        "torch.float16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    1024,
+                    1024,
+                    1024
+                  ],
+                  "dtype": "torch.float16",
+                  "stride": [
+                    1048576,
+                    1024,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            1024,
+            1024,
+            1024
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.float32": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.float32",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    1024,
+                    1024,
+                    1024
+                  ],
+                  "dtype": "torch.float32",
+                  "stride": [
+                    1048576,
+                    1024,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            1024,
+            1024,
+            1024
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        },
+        "torch.bfloat16": {
+          "inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timed_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              },
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": false
+              }
+            ],
+            "kwargs": {}
+          },
+          "logical_case_inputs": {
+            "args": [
+              {
+                "shape": [
+                  1024,
+                  1024,
+                  1024
+                ],
+                "dtype": "torch.bfloat16",
+                "stride": [
+                  1048576,
+                  1024,
+                  1
+                ],
+                "requires_grad": true
+              }
+            ],
+            "kwargs": {}
+          },
+          "native_timer_contract": {
+            "kind": "prepared_autograd_backward",
+            "forward": "torch.nn.functional.softplus",
+            "backward": "torch.autograd.grad",
+            "argument_order": [
+              "forward_output",
+              "self",
+              "grad_output"
+            ],
+            "beta": 1,
+            "threshold": 20,
+            "retain_graph": true,
+            "create_graph": false,
+            "returns": {
+              "container": "tuple",
+              "items": [
+                {
+                  "shape": [
+                    1024,
+                    1024,
+                    1024
+                  ],
+                  "dtype": "torch.bfloat16",
+                  "stride": [
+                    1048576,
+                    1024,
+                    1
+                  ],
+                  "requires_grad": false
+                }
+              ]
+            },
+            "graph": {
+              "self_is_leaf": true,
+              "forward_output_is_leaf": false,
+              "forward_output_has_grad_fn": true,
+              "forward_output_created_from_this_self": true
+            },
+            "setup_timed": false
+          },
+          "random_policy": "source_unseeded_global_generator_no_reset",
+          "input_recipe": "generate(self); clone.requires_grad; softplus; randn_like(out)",
+          "benchmark": "benchmark/test_softplus.py",
+          "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+          "source_test": "test_softplus_backward",
+          "descriptor": [
+            1024,
+            1024,
+            1024
+          ],
+          "scope": "core",
+          "variant": 0,
+          "grid_contract": "softplus_backward.legacy.core/v1",
+          "input_contract": "softplus-backward-legacy-native-prepared/v1",
+          "producer_selector": {},
+          "source_bindings": {
+            "consts_sha256": "004daeb8f201f67da3c8bac6a87c8deb71a030d0382c4fa69f219738f673a8ec",
+            "core_shapes_yaml_sha256": "720ad7776ce6e172e6c6eb78ee94b84b243ec7ee84a295543ac76fddd63b664d",
+            "legacy_callable": "95acdf392196ee81ac1c822226f179f9cb434b014a48e2786d3390f13d4578da",
+            "legacy_generator": "67b686d91b6ec438eea768c81b2ae154182be8a52a9939d0c57af8c9aa10a79b",
+            "legacy_iterator": "888387394050427be55becf89b72d8aed4cbc9558b9e9039d4b4fd25666faac4",
+            "legacy_unpack": "3b1a1bbd45f98219a8b2126f367fa67e8b7075f29cf5a12a3c7ebeba72904e8c"
+          }
+        }
+      }
+    }
   ]
 }
