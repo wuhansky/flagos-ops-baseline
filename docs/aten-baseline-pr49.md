@@ -53,3 +53,13 @@ existing digest-based readers without guessing JSON serialization. Mixed-source
 raw evidence retains its historical complete contents; only the selected native
 entries are exposed as imported operator records. A reader must verify the
 original digest and compare those entries with the indexed unified records.
+
+## Main integration
+
+No selector: retain main's 14-recipe seeded union profile unchanged.
+`OPS_BASELINE_MEDIAN_SUIYUAN_CORE=0`: select the historical nine-recipe
+unseeded profile. `OPS_BASELINE_MEDIAN_SUIYUAN_CORE=1`: select the original
+five-recipe seeded Suiyuan profile. The frozen historical catalog records its
+explicit `0` selector; the historical-catalog test loader honors that metadata.
+Every profile retains its own keys, dtypes, input recipe and config metadata.
+No stored measurements were recollected or rewritten during this merge.
