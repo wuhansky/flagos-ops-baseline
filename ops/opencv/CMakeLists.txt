@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.18)
+project(opencv_baseline_bridge LANGUAGES CXX)
+find_package(OpenCV REQUIRED COMPONENTS core cudaarithm)
+find_package(CUDAToolkit REQUIRED)
+add_library(opencv_baseline SHARED bridge.cpp)
+target_include_directories(opencv_baseline PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(opencv_baseline PRIVATE ${OpenCV_LIBS} CUDA::cudart)
+target_compile_features(opencv_baseline PRIVATE cxx_std_11)
