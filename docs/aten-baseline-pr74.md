@@ -45,4 +45,11 @@ unchanged. Retained mixed artifacts: none.
 Validation: all selected operator entries reconstruct exactly from their pinned
 source blobs; all historical data/metadata are preserved; only this PR's native
 sources were imported; shape destinations are unique. File size:
-91,151,480 bytes. SHA256: `ff2aaac9dbc4081a64c3edce91ad3331efbf79edad60ed430ace5f0d993b72ba`.
+91,311,189 bytes. SHA256: `e1c47960d74d221bdae1008f5322ef4d4e3db5ca57c537bf2f452ac0adf8f5f5`.
+
+Exact original snapshot bytes are embedded in each source's `raw_json`, and the
+profile manifest has the same field under `auxiliary_artifacts`. This preserves
+existing digest-based readers without guessing JSON serialization. Mixed-source
+raw evidence retains its historical complete contents; only the selected native
+entries are exposed as imported operator records. A reader must verify the
+original digest and compare those entries with the indexed unified records.
