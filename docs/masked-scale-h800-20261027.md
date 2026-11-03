@@ -1,3 +1,5 @@
+> Current data location: the native ATen entries from this PR are now in `op_pytorch_h800_perf_baseline.json`. See `docs/aten-baseline-pr42.md` for exact source/key selection. Standalone names and hashes below describe the immutable original collection.
+
 # Native H800 masked-scale core baseline
 
 `op_pytorch_h800_masked_scale_core_baseline.json` contains exactly five measured Float32 records for FlagGems `_masked_scale`, collected through the `masked_scale` PyTorch module and native `aten::_masked_scale.default`. Original ac9 core shapes, including both distinct Gi-element geometries, Gaussian seed0 input, subsequent uint8 randint(0,2) mask and scale2.0 are preserved.
