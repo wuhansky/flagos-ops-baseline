@@ -925,6 +925,14 @@ def _collect_one_op_ops(op_module, ncu_enabled, report_dir,
         raise ValueError("prepare_sample is supported only with --no-ncu")
     if prepare is not None and getattr(op_module, "make_input_reset", None) is not None:
         raise ValueError("prepare_sample and make_input_reset cannot be combined")
+    measurement = getattr(op_module, "measure_latency", None)
+    if measurement is not None:
+        if not callable(measurement):
+            raise TypeError("measure_latency must be callable")
+        if hasattr(op_module, "BENCH_RETURN_MODE"):
+            raise ValueError("measure_latency owns its timing; return-mode overrides are unsupported")
+        if prepare is not None or getattr(op_module, "make_input_reset", None) is not None:
+            raise ValueError("measure_latency cannot be combined with another preparation protocol")
     mod_name = op_module.__name__
     op = op_module.native()
     if op is None:
@@ -965,16 +973,20 @@ def _collect_one_op_ops(op_module, ncu_enabled, report_dir,
             timing_options = {}
             if hasattr(op_module, "BENCH_RETURN_MODE"):
                 timing_options["return_mode"] = op_module.BENCH_RETURN_MODE
-            reset_factory = getattr(op_module, "make_input_reset", None)
-            reset = reset_factory(*args, **kwargs) if reset_factory else None
-            if reset is not None:
-                latency_ms = op_module.time_with_reset(lambda: op(*args, **kwargs), reset)
-                timing_metadata = op_module.timing_contract()
-                del reset
-            else:
-                latency_ms = _ops_latency_ms(
-                    op_module, op, args, kwargs, ncu_enabled, timing_options)
+            if measurement is not None:
+                latency_ms = measurement(op, args, kwargs)
                 timing_metadata = None
+            else:
+                reset_factory = getattr(op_module, "make_input_reset", None)
+                reset = reset_factory(*args, **kwargs) if reset_factory else None
+                if reset is not None:
+                    latency_ms = op_module.time_with_reset(lambda: op(*args, **kwargs), reset)
+                    timing_metadata = op_module.timing_contract()
+                    del reset
+                else:
+                    latency_ms = _ops_latency_ms(
+                        op_module, op, args, kwargs, ncu_enabled, timing_options)
+                    timing_metadata = None
             if ncu_enabled:
                 # NCU 子进程会用 build_inputs 再分配一份实参。大 E MoE（如
                 # e256_h7168 权重单份就 ~22GB）主、子进程两份叠加会超显存，导致
