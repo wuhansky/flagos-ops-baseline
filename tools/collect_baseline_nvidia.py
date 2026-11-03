@@ -353,12 +353,20 @@ def _make_args():
 
 
 args, kwargs = _make_args()
+reset_factory = getattr(opmod, "make_input_reset", None)
+reset = reset_factory(*args, **kwargs) if reset_factory else None
+cache = reset.make_cache() if reset is not None else None
 for _ in range({warmup}):
+    if reset is not None:
+        reset.prepare(cache)
     op(*args, **kwargs)
 torch.cuda.synchronize()
 # 重建实参（避免原地算子的 warmup 累积污染），随后仅把这一次目标调用圈进
 # NVTX range，NCU 用 --nvtx-include "kiro_target/" 精确采样它发出的 kernel。
-args, kwargs = _make_args()
+if reset is None:
+    args, kwargs = _make_args()
+else:
+    reset.prepare(cache)
 torch.cuda.synchronize()
 torch.cuda.nvtx.range_push("kiro_target")
 op(*args, **kwargs)
@@ -503,6 +511,7 @@ def profile_with_ncu(op_name, profile_script, shape, dtype_str,
         export_cmd = [
             "ncu", "--metrics", ",".join(metrics),
             "--nvtx", "--nvtx-include", "kiro_target/",
+            "--cache-control", "all",
             "--force-overwrite", "--export", str(report_base),
             sys.executable, script_path,
         ]
@@ -851,12 +860,15 @@ def _select_ops(discovered, only=None, whitelist=None, blacklist=None):
     return selected
 
 
-def _ops_latency_ms(op_module, op, args, kwargs, ncu_enabled):
+def _ops_latency_ms(op_module, op, args, kwargs, ncu_enabled, timing_options=None):
     """Own the CUDA clock; optional preparation runs before every start event."""
     prepare = getattr(op_module, "prepare_sample", None)
     if prepare is None:
         return triton.testing.do_bench(
-            lambda: op(*args, **kwargs), warmup=25, rep=100)
+            lambda: op(*args, **kwargs), warmup=25, rep=100,
+            **(timing_options or {}))
+    if timing_options:
+        raise ValueError("prepare_sample owns mean timing; return-mode overrides are unsupported")
     if not callable(prepare):
         raise TypeError("prepare_sample must be callable")
     if ncu_enabled:
@@ -911,6 +923,8 @@ def _collect_one_op_ops(op_module, ncu_enabled, report_dir,
         raise TypeError("prepare_sample must be callable")
     if prepare is not None and ncu_enabled:
         raise ValueError("prepare_sample is supported only with --no-ncu")
+    if prepare is not None and getattr(op_module, "make_input_reset", None) is not None:
+        raise ValueError("prepare_sample and make_input_reset cannot be combined")
     mod_name = op_module.__name__
     op = op_module.native()
     if op is None:
@@ -948,8 +962,19 @@ def _collect_one_op_ops(op_module, ncu_enabled, report_dir,
         for dtype in dtypes:
             dtype_str = str(dtype)
             args, kwargs = op_module.build_inputs(binding, dtype, "cuda")
-            latency_ms = _ops_latency_ms(
-                op_module, op, args, kwargs, ncu_enabled)
+            timing_options = {}
+            if hasattr(op_module, "BENCH_RETURN_MODE"):
+                timing_options["return_mode"] = op_module.BENCH_RETURN_MODE
+            reset_factory = getattr(op_module, "make_input_reset", None)
+            reset = reset_factory(*args, **kwargs) if reset_factory else None
+            if reset is not None:
+                latency_ms = op_module.time_with_reset(lambda: op(*args, **kwargs), reset)
+                timing_metadata = op_module.timing_contract()
+                del reset
+            else:
+                latency_ms = _ops_latency_ms(
+                    op_module, op, args, kwargs, ncu_enabled, timing_options)
+                timing_metadata = None
             if ncu_enabled:
                 # NCU 子进程会用 build_inputs 再分配一份实参。大 E MoE（如
                 # e256_h7168 权重单份就 ~22GB）主、子进程两份叠加会超显存，导致
@@ -969,6 +994,14 @@ def _collect_one_op_ops(op_module, ncu_enabled, report_dir,
             if hasattr(op_module, "config"):
                 cfg = op_module.config(binding, dtype)
             per_dtype[dtype_str] = _finalize_record(latency_ms, ncu, config=cfg)
+            if timing_metadata is not None:
+                per_dtype[dtype_str]["timing"] = timing_metadata
+            elif timing_options:
+                per_dtype[dtype_str]["timing"] = {
+                    "method": "triton.testing.do_bench",
+                    "return_mode": timing_options["return_mode"],
+                    "warmup_ms": 25, "rep_ms": 100,
+                }
 
             bn = ncu["bottleneck"]
             suffix = (f"  瓶颈={bn} ({ncu['bottleneck_util']*100:.1f}%)"
