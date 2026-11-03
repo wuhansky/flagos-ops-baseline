@@ -46,4 +46,11 @@ unchanged. Retained mixed artifacts: `op_pytorch_h800_median_row_lanczos_union_p
 Validation: all selected operator entries reconstruct exactly from their pinned
 source blobs; all historical data/metadata are preserved; only this PR's native
 sources were imported; shape destinations are unique. File size:
-91,170,370 bytes. SHA256: `985e4afb36bb91175e078a10e17b70da226de366de36463456c13f0825eb47b6`.
+91,342,655 bytes. SHA256: `7452ae23a675c3b60d93f88a9f35c1ec8c2c8c8b0bfa60d0e63eeb007a5fe561`.
+
+Exact original snapshot bytes are embedded in each source's `raw_json`, and the
+profile manifest has the same field under `auxiliary_artifacts`. This preserves
+existing digest-based readers without guessing JSON serialization. Mixed-source
+raw evidence retains its historical complete contents; only the selected native
+entries are exposed as imported operator records. A reader must verify the
+original digest and compare those entries with the indexed unified records.
