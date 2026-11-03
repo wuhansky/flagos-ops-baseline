@@ -28,6 +28,8 @@ python tools/collect_baseline_nvidia.py --report-dir ncu_reports
 # Select the op source repo: scans ops/<repo>/ (default vllm)
 python tools/collect_baseline_nvidia.py --repo vllm
 python tools/collect_baseline_nvidia.py --repo sglang
+# OpenCV CUDA add (build bridge first; see ops/opencv/README.md)
+python tools/collect_baseline_nvidia.py --repo opencv --ops add
 python tools/collect_baseline_nvidia.py --repo pytorch --ops mm,layer_norm
 
 # Only run specific ops (comma-separated, or a file of op names)
