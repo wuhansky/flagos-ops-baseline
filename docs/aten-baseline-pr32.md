@@ -48,4 +48,11 @@ unchanged. Retained mixed artifacts: `op_inspect216_h800_perf_baseline.json`.
 Validation: all selected operator entries reconstruct exactly from their pinned
 source blobs; all historical data/metadata are preserved; only this PR's native
 sources were imported; shape destinations are unique. File size:
-91,673,055 bytes. SHA256: `a620b4810794461de18f12875fc433d82790b428b46f1afa85dbd7ce62272653`.
+92,475,558 bytes. SHA256: `6a6277aa9e2baab389fe3e3a3377267801cc6fc20ba9eec76f7617d9dbf25548`.
+
+Exact original snapshot bytes are embedded in each source's `raw_json`, and the
+profile manifest has the same field under `auxiliary_artifacts`. This preserves
+existing digest-based readers without guessing JSON serialization. Mixed-source
+raw evidence retains its historical complete contents; only the selected native
+entries are exposed as imported operator records. A reader must verify the
+original digest and compare those entries with the indexed unified records.
