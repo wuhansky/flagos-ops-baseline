@@ -142,3 +142,7 @@ if "OPS_BASELINE_MEDIAN_SUIYUAN_CORE" in _profile_os.environ:
                 "input_builder_sha256": "d95708621137c7551aefb533f2d6c5bf94b008b7b2e649a75db89a761abad920",
                 "input_helper_sha256": "e991af3667ae315b99d8508a74c52528e478f5bc00ddd96eab06dad01b219495",
             }
+
+# Describe the selected historical producer in source-provenance checks.
+if "OPS_BASELINE_MEDIAN_SUIYUAN_CORE" in _profile_os.environ:
+    __doc__ = "Native no-dim median recipes from FlagGems 9d57a23b4386bd669152a935fe88a96db907da7c.\n\nThe default contract retains that source's nine unseeded shapes and five dtypes.\nAn explicit operator-local selector enables the separate, seed-0 Suiyuan core\ngrid. Neither dim nor out overloads are included in this module."
