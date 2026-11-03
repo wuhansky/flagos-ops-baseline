@@ -1,3 +1,5 @@
+> Current data location: the native ATen entries from this PR are now in `op_pytorch_h800_perf_baseline.json`. See `docs/aten-baseline-pr56.md` for exact source/key selection. Standalone names and hashes below describe the immutable original collection.
+
 # Original median, row-stack and Lanczos core reference
 
 `op_pytorch_h800_median_row_lanczos_union_perf_baseline.json` contains 114 latency records collected with the official PyTorch collector on an NVIDIA H800. The source used for collection is clean Git revision `5b2ca5c0c317f1ea937997edde011509bae84cd6`; the artifact's `_environment` preserves actual source, hardware, software and command metadata. Packaging revisions after collection do not change that source identity.
