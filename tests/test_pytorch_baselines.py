@@ -163,7 +163,7 @@ print(json.dumps(result))
         expected = {
             info.get("module", name)
             for name, info in self.manifest["operators"].items()
-        } | {"silu", CANONICAL_FORWARD}
+        } | {"silu", CANONICAL_FORWARD, "_sparse_log_softmax"}
         self.assertEqual(expected, {p.stem for p in OPS.glob("*.py")})
         coverage = json.loads((OPS / "coverage.json").read_text())
         self.assertEqual(coverage["summary"]["added_operators"], len(names))
@@ -181,6 +181,9 @@ print(json.dumps(result))
                         module.BENCHMARK_SHA256,
                         "277a4abf680476fc90612fdd696698d81c72dd87a5d2d8b196caf372b80bfd4f",
                     )
+                elif name == "_sparse_log_softmax_backward_data":
+                    self.assertEqual(module.CASE_SOURCE, "f30a563479449016490ef674b3670ede6c101988")
+                    self.assertEqual(len(module.grid()), self.manifest["operators"][name]["cases"])
                 else:
                     self.assertIn(self.manifest["source_commit"], module.__doc__)
                 self.assertTrue(callable(module.native()))
@@ -201,6 +204,8 @@ print(json.dumps(result))
 
     def test_all_source_descriptors_dtypes_and_variants_reconstruct(self):
         for name, module in self.modules.items():
+            if name == "_sparse_log_softmax_backward_data":
+                continue  # Its physical COO recipe is checked independently below.
             for binding in module.grid():
                 for dtype in module.DTYPES:
                     with self.subTest(op=name, binding=binding, dtype=dtype):
@@ -254,6 +259,8 @@ print(json.dumps(result))
                         self.assertIsInstance(kwargs, dict)
                         self.assertEqual(binding, before)
                         json.dumps(config)
+
+
 
     def test_bindings_and_config_are_not_shared_mutable_state(self):
         module = self.modules["mm"]
@@ -484,6 +491,69 @@ print(json.dumps(result))
         self.assertEqual(first, second)
         self.assertEqual(random.getstate(), python_state)
         self.assertTrue(torch.equal(torch.random.get_rng_state(), cpu_state))
+
+
+class SparseLogSoftmaxCatalogTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # This recipe has an independent physical COO input contract.
+        cls.manifest = json.loads((OPS / "_kernelgen/manifest.json").read_text())
+        path = OPS / "_sparse_log_softmax_backward_data.py"
+        spec = importlib.util.spec_from_file_location("baseline_log_softmax", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        cls.modules = {module.OP_NAME: module}
+
+    def test_log_softmax_descriptors_dtypes_and_variants_reconstruct(self):
+        for name, module in self.modules.items():
+            if name != "_sparse_log_softmax_backward_data":
+                continue
+            for binding in module.grid():
+                for dtype in module.DTYPES:
+                    with self.subTest(op=name, binding=binding, dtype=dtype):
+                        before = json.loads(json.dumps(binding))
+                        if name == "_sparse_log_softmax_backward_data":
+                            # All original descriptors/dtypes still execute; do not
+                            # compare a physical-byte recipe to undefined meta data.
+                            from _sparse_log_softmax_inputs import input_identity
+
+                            args, kwargs = module.build_inputs(binding, dtype, "cpu")
+                            config = module.config(binding, dtype)
+                            self.assertEqual(
+                                config["inputs"],
+                                input_identity(
+                                    {
+                                        "grad": args[0],
+                                        "output": args[1],
+                                        "self": args[3],
+                                    }
+                                ),
+                            )
+                            self.assertEqual(
+                                config["case_source_commit"], module.CASE_SOURCE
+                            )
+                            self.assertEqual(args[2], binding["dim"])
+                            self.assertEqual(kwargs, {})
+                            for value in (args[0], args[1], args[3]):
+                                self.assertEqual(value.layout, torch.sparse_coo)
+                                self.assertEqual(list(value.shape), binding["shape"])
+                                self.assertEqual(value._nnz(), binding["nnz"])
+                                self.assertEqual(value.dtype, dtype)
+                            self.assertEqual(binding, before)
+                            json.dumps(config)
+                            continue
+                        args, kwargs = module.build_inputs(binding, dtype, "meta")
+                        self.assertIsInstance(args, tuple)
+                        self.assertIsInstance(kwargs, dict)
+                        config = module.config(binding, dtype)
+                        self.assertEqual(
+                            describe({"args": args, "kwargs": kwargs}), config["inputs"]
+                        )
+                        self.assertEqual(
+                            config["source_commit"], self.manifest["source_commit"]
+                        )
+                        self.assertEqual(binding, before)
+                        json.dumps(config)
 
 
 if __name__ == "__main__":
