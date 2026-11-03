@@ -9,12 +9,12 @@
     "named_benchmark_constructors": 1805,
     "unique_benchmark_names": 1694,
     "operator_config_ids": 1443,
-    "added_operators": 816,
     "existing_silu": 1,
-    "added_descriptors": 5244,
-    "pending_records": 1082,
+    "added_operators": 817,
+    "added_descriptors": 5248,
+    "pending_records": 1081,
     "pending_categories": {
-      "custom_input_or_state": 393,
+      "custom_input_or_state": 392,
       "host_or_no_kernel": 96,
       "meta_enumeration_unavailable": 20,
       "manual_input_review": 105,
@@ -102,15 +102,6 @@
       "line": 179,
       "native": "_torch_op_wrapper",
       "reason": "custom benchmark family: Benchmark",
-      "category": "custom_input_or_state"
-    },
-    {
-      "op": "_adaptive_avg_pool3d_backward",
-      "source_file": "benchmark/test__adaptive_avg_pool3d_backward.py",
-      "source_test": "test_adaptive_avg_pool3d_backward",
-      "line": 45,
-      "native": "torch.ops.aten._adaptive_avg_pool3d_backward",
-      "reason": "unresolved dependency: self",
       "category": "custom_input_or_state"
     },
     {
@@ -10584,6 +10575,12 @@
       "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
       "scope": "core",
       "note": "Verified existing helper-dispatched _run_benchmark source: unseeded 5-shape/3-dtype Double out; no parser change."
+    },
+    {
+      "op": "_adaptive_avg_pool3d_backward",
+      "source_commit": "9d57a23b4386bd669152a935fe88a96db907da7c",
+      "scope": "core",
+      "note": "Explicit original self/gradient recipe: legacy forward then ones_like; optional current2ff randn-gradient profile, both retain unseeded source RNG behavior."
     }
   ]
 }
