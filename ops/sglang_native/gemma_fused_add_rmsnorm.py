@@ -3,34 +3,35 @@
 import _sglang_profiles
 import torch
 
-OP_NAME = "gemma_fused_add_rmsnorm"
+OP_NAME = "sglang_fl_gemma_fused_add_rmsnorm"
+_NATIVE_OPERATOR = "gemma_fused_add_rmsnorm"
 DTYPES = [torch.bfloat16]
 BENCH_RETURN_MODE = "median"
 IS_INPLACE = True
 
 
 def native():
-    return _sglang_profiles.native(OP_NAME)
+    return _sglang_profiles.native(_NATIVE_OPERATOR)
 
 
 def grid():
-    return _sglang_profiles.grid(OP_NAME)
+    return _sglang_profiles.grid(_NATIVE_OPERATOR)
 
 
 def build_inputs(binding, dtype, device):
-    return _sglang_profiles.inputs(OP_NAME, binding, dtype, device)
+    return _sglang_profiles.inputs(_NATIVE_OPERATOR, binding, dtype, device)
 
 
 def key_shape(binding):
-    return _sglang_profiles.key_shape(OP_NAME, binding)
+    return _sglang_profiles.key_shape(_NATIVE_OPERATOR, binding)
 
 
 def config(binding, dtype):
-    return _sglang_profiles.config(OP_NAME, binding, dtype)
+    return _sglang_profiles.config(_NATIVE_OPERATOR, binding, dtype)
 
 
 def make_input_reset(**inputs):
-    return _sglang_profiles.make_input_reset(OP_NAME, inputs)
+    return _sglang_profiles.make_input_reset(_NATIVE_OPERATOR, inputs)
 
 
 def time_with_reset(fn, reset):

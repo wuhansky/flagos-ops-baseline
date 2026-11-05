@@ -75,3 +75,24 @@ def test_gdn_reported_head_counts_cannot_contradict_tensor_geometry():
         v_heads = cfg["inputs"]["v"]["shape"][-2]
         assert params.get("q_heads", q_heads) == q_heads
         assert params.get("value_heads", v_heads) == v_heads
+
+
+def test_published_operator_names_match_collector_recipes():
+    import importlib.util
+    import json
+
+    artifact = json.loads(
+        (ROOT / "op_sglang_native_h800_perf_baseline.json").read_text()
+    )
+    names = set()
+    for path in sorted((ROOT / "ops/sglang_native").glob("*.py")):
+        if path.name.startswith("_"):
+            continue
+        spec = importlib.util.spec_from_file_location("_recipe_" + path.stem, path)
+        recipe = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(recipe)
+        assert recipe.OP_NAME == "sglang_fl_" + recipe._NATIVE_OPERATOR.lstrip("_")
+        assert recipe.OP_NAME in artifact
+        assert recipe._NATIVE_OPERATOR not in artifact
+        names.add(recipe.OP_NAME)
+    assert len(names) == 7

@@ -18,6 +18,7 @@ def test_six_distinct_source_workloads():
     )
     recipe = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(recipe)
+    assert recipe.OP_NAME == "sglang_fl_mrotary_embedding"
     rows = recipe.grid()
     assert len(rows) == 6
     assert len({recipe.key_shape(row) for row in rows}) == 6

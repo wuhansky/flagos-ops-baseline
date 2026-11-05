@@ -14,7 +14,7 @@ from pathlib import Path
 
 import torch
 
-OP_NAME = "mrotary_embedding"
+OP_NAME = "sglang_fl_mrotary_embedding"
 DTYPES = [torch.bfloat16]
 IS_INPLACE = True
 BENCH_RETURN_MODE = "median"  # Match SGLang's NVIDIA kernel timer.
@@ -97,7 +97,7 @@ def _reset_module():
 
 
 def make_input_reset(**inputs):
-    return _reset_module().capture_reset(OP_NAME, inputs)
+    return _reset_module().capture_reset("mrotary_embedding", inputs)
 
 
 def time_with_reset(fn, reset):
