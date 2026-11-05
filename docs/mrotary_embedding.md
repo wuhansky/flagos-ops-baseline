@@ -35,9 +35,9 @@ in-place callable on preallocated tensors; input/cache construction is excluded.
 
 ## Collected snapshot
 
-`op_sglang_mrotary_h800_perf_baseline.json` contains the six actual H800 records
+The mRoPE subset in `op_sglang_perf_baseline.json` contains six actual H800 records
 collected on 2026-10-29, including NCU per-kernel records, full input configuration,
-source hashes and `_environment`. The first attempt's overlong report filenames
+source hashes and batch metadata under `_environments.mrotary.environment`. The first attempt's overlong report filenames
 failed profiling; this snapshot is exclusively the final median-statistic attempt
 using hashed v2 keys. No failed first-attempt records were merged into it.
 
@@ -66,7 +66,7 @@ The six records use `mrotary-v3-*` keys and the shared reset-excluded device-eve
 median contract. Every native invocation restores q/k before cache preparation;
 restoration and cache work stay outside timing events and NCU capture. The
 snapshot was recollected with the same pinned native source and current H800
-Torch/Triton environment recorded in `_environment`. See
+Torch/Triton environment recorded in `_environments.mrotary.environment`. See
 `validation/reset_timing_validation.json` for the 34-record combined collection and seven
 backend pipeline checks. Old v2 records cannot match the refreshed keys.
 

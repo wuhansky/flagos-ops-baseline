@@ -15,7 +15,7 @@ than selecting a Torch substitute.
 ```sh
 export FLAGGEMS_SGLANG_SOURCE=/workspace/sglang-suite
 python tools/collect_baseline_nvidia.py --repo sglang_native --device 0 \
-  --reference-chip H800 --output op_sglang_native_h800_perf_baseline.json \
+  --reference-chip H800 --output sglang-native-run.json \
   --report-dir sglang-native-ncu
 ```
 
@@ -33,8 +33,8 @@ opt-in retain their existing timer and NCU argument-rebuild behavior.
 Keys hash full tensor geometry (including stride and storage offset),
 scalar/configuration ABI and timing mode. GDN pools retain their documented full
 sizes. Configuration records contain input geometry, upstream revision and the
-shared workload source SHA256. Collection `_environment` describes the actual
-host/software/run; examine it alongside per-case NCU records before comparing.
+shared workload source SHA256. The consolidated
+`_environments.native.environment` describes the actual host/software/run; examine it alongside per-case NCU records before comparing.
 
 Pass the resulting JSON through target FlagGems-sglang benchmark `--base-data`.
 Only equal configuration keys should match; locally timed Torch reference-as-
@@ -42,8 +42,9 @@ candidate results validate the pipeline, not an optimized kernel.
 
 ## Published H800 snapshot
 
-Both this snapshot (28 cases) and `op_sglang_mrotary_h800_perf_baseline.json`
-(6 cases) were freshly collected on H800 after the timing fix. Ten
+The native subset (28 cases) and mRoPE subset (6 cases) in
+`op_sglang_perf_baseline.json` were freshly collected on H800 after the timing
+fix. Ten
 read-write keys and six mRoPE keys now include the reset-excluded timing
 contract. The eighteen read-only records retain their timing contract; all 28 key
 prefixes are normalized as described below. The original SGLang
@@ -54,12 +55,10 @@ Kunlunxin P800 comparisons retain raw ratios (`factor=None`) because its
 memory-bandwidth factor is absent. See `validation/reset_timing_validation.json` for
 exact collected source revisions, checks and retained evidence hashes.
 
-`op_sglang_native_h800_perf_baseline.json` contains all seven interfaces and 28
+`op_sglang_perf_baseline.json` includes all seven interfaces and 28 native
 core records collected on H800 with median latency and NCU counters. Each record
-has a positive kernel count and retained raw `.ncu-rep` evidence. `_provenance`
-binds the raw collection hash, exact remote/local source file hashes and Git
-revisions, original native source revision, shared timing specification and complete
-source-manifest hash.
+has a positive kernel count and retained raw `.ncu-rep` evidence. Historical
+source and collection receipts remain under Git history and `docs/validation/`.
 The collector's Git fields remain null for the tar-staged remote checkout;
 verified source provenance is recorded separately rather than inventing Git
 state on that host.
@@ -80,8 +79,9 @@ Use the paired FlagGems-sglang checkout containing `operator_workloads.py` and
 (read-only) / `sglang-v2-*` (read-write) without changing the geometry/ABI digest,
 latency, counters, kernel records or scaling factors. Configuration labels now
 record explicit dimensions. `_key_migration` records the original artifact hash;
-original capture paths/source hashes remain verbatim in `_environment` and
-`_provenance`. Receipts under `docs/validation/` are immutable historical evidence,
+original collection details remain in the batch environment and historical
+validation receipts. Receipts under `docs/validation/` are immutable historical
+evidence,
 so their original filenames and hashes describe the pre-cleanup artifact.
 No NVIDIA recollection or golden-tensor regeneration is implied by this rename.
 

@@ -121,3 +121,16 @@ NCU 未取得 kernel 指标的算子标记 `profiling_incomplete`；这也可能
 证据时才替换。续跑开始前清除终止标记，并记录 `attempt_started_at_utc`。
 协调器或落盘发生异常时先停止消费者，再等待进程清理。自定义 `--report-dir`
 使用完整输出路径的摘要与尝试 ID 隔离，避免不同目录的同名输出互相覆盖报告。
+
+## 统一的 SGLang 性能基线
+
+`op_sglang_perf_baseline.json` 是统一发布的 SGLang NVIDIA 性能基线，包含
+64 个算子、347 条 shape/dtype 记录，包括 8 个公开的 `sglang_fl_` 算子。
+目标 benchmark 通过 `--base-data` 指定此文件。
+
+`_scaling_factors` 共用一份。`_environments` 保存 `legacy`、`mrotary`、`native`
+三个采集批次，每个批次列出所属 `operators` 和对应的 `environment`；合并文件不存在
+统一的采集环境。删除历史采集器输出 JSON 路径和 `_provenance`，算子名、case 键、
+输入配置、计时契约和所有测量数据保持不变。该发布快照不能用作采集器 resume 输入。
+
+新采集的子集应输出到单独的临时文件，避免覆盖统一快照。旧的分文件由 Git 历史保留。

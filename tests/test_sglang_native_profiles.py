@@ -82,7 +82,7 @@ def test_published_operator_names_match_collector_recipes():
     import json
 
     artifact = json.loads(
-        (ROOT / "op_sglang_native_h800_perf_baseline.json").read_text()
+        (ROOT / "op_sglang_perf_baseline.json").read_text()
     )
     names = set()
     for path in sorted((ROOT / "ops/sglang_native").glob("*.py")):

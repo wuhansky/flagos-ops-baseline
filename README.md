@@ -120,3 +120,19 @@ Resume clears terminal flags before work begins and records `attempt_started_at_
 Coordinator/checkpoint failures stop consumers before waiting for process cleanup.
 Custom `--report-dir` paths include a digest of the full output path and an attempt
 ID, so identically named outputs in separate directories do not overwrite reports.
+
+## Consolidated SGLang baseline
+
+`op_sglang_perf_baseline.json` is the single published SGLang NVIDIA baseline:
+64 operators and 347 shape/dtype records, including the eight public `sglang_fl_`
+operators. Pass this file to the target benchmark via `--base-data`.
+
+`_scaling_factors` is shared. `_environments` retains the `legacy`, `mrotary`,
+and `native` collection batches; each batch lists its `operators` and its
+`environment`. There is no single environment for the entire merged artifact.
+The historical collector output JSON path and `_provenance` are omitted.
+Operator keys, case keys, configurations, timing contracts and measurements
+are unchanged. This is a published snapshot, not a collector resume file.
+
+Fresh subset collections should use a separate output file to avoid replacing
+the consolidated snapshot. The previous split artifacts remain in Git history.
