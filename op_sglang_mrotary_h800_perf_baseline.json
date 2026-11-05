@@ -750,7 +750,7 @@
       }
     ]
   },
-  "mrotary_embedding": {
+  "sglang_fl_mrotary_embedding": {
     "native_api": "ops.mrotary_embedding",
     "shapes": {
       "mrotary-v3-beef6f1cdbc948b56ee541ca249d8b6eddf78870ad806ba05b46dd9bbe839993": {

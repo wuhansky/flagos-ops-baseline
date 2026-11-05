@@ -10,7 +10,7 @@ that checkout, rather than maintained as another independent shape list:
 
 ```sh
 export FLAGGEMS_SGLANG_SOURCE=/absolute/path/FlagGems-sglang
-python tools/collect_baseline_nvidia.py --repo sglang --ops mrotary_embedding \
+python tools/collect_baseline_nvidia.py --repo sglang --ops sglang_fl_mrotary_embedding \
   --device 0 --reference-chip H800 --report-dir reports/mrotary \
   --output op_sglang_mrotary_h800.json
 ```
@@ -69,3 +69,7 @@ snapshot was recollected with the same pinned native source and current H800
 Torch/Triton environment recorded in `_environment`. See
 `validation/reset_timing_validation.json` for the 34-record combined collection and seven
 backend pipeline checks. Old v2 records cannot match the refreshed keys.
+
+The published top-level baseline key is `sglang_fl_mrotary_embedding`, matching
+the Test / Definition name. The rename preserves all six workload keys and
+measurement records. The recipe continues to call the original native mRoPE.

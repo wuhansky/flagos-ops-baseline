@@ -64,10 +64,8 @@ The collector's Git fields remain null for the tar-staged remote checkout;
 verified source provenance is recorded separately rather than inventing Git
 state on that host.
 
-The legacy collector summary excludes underscore-prefixed keys when counting
-operators, so it prints six for this snapshot. The named
-`_fused_moe_kernel_sequence` entry is a real seventh operator and is retained;
-consumers must use the requested operator key. The companion benchmark checks
+The collector summary counts all seven public `sglang_fl_` operator keys,
+including `sglang_fl_fused_moe_kernel_sequence`. The companion benchmark checks
 all 28 configuration keys directly.
 
 Golden data for these core cases was generated on H800 and uploaded to the
@@ -86,3 +84,9 @@ original capture paths/source hashes remain verbatim in `_environment` and
 `_provenance`. Receipts under `docs/validation/` are immutable historical evidence,
 so their original filenames and hashes describe the pre-cleanup artifact.
 No NVIDIA recollection or golden-tensor regeneration is implied by this rename.
+
+The seven top-level baseline keys and collector `OP_NAME` values use the
+`sglang_fl_` Test / Definition names. The 28 existing workload keys, latency
+values, counters and collection metadata are preserved. Native entrypoints keep
+their original names. Update the target FlagGems-sglang checkout and KGS baseline
+selector together with these JSON files.

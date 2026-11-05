@@ -754,7 +754,7 @@
       }
     ]
   },
-  "chunk_gated_delta_rule_fwd": {
+  "sglang_fl_chunk_gated_delta_rule_fwd": {
     "native_api": "ops.chunk_gated_delta_rule_fwd",
     "shapes": {
       "sglang-v2-8a89a0d11f0df5a8b2307ce7a15f8f3bd71ebde2a833ec394f991c0422583487": {
@@ -1317,7 +1317,7 @@
       }
     }
   },
-  "_fused_moe_kernel_sequence": {
+  "sglang_fl_fused_moe_kernel_sequence": {
     "native_api": "ops.fused_moe_kernel_sequence",
     "shapes": {
       "sglang-v2-2915c7e890a5374bdaf1d9bc817eb3ec01c2631b855b471e3c514150fedeeef2": {
@@ -1932,7 +1932,7 @@
       }
     }
   },
-  "fused_recurrent_gated_delta_rule_packed_decode": {
+  "sglang_fl_fused_recurrent_gated_delta_rule_packed_decode": {
     "native_api": "ops.fused_recurrent_gated_delta_rule_packed_decode",
     "shapes": {
       "sglang-v2-c4ef433b93639b1de65c3202b67f12edcc21016e319ef8d2dcef57810eb4f7f2": {
@@ -2313,7 +2313,7 @@
       }
     }
   },
-  "gemma_fused_add_rmsnorm": {
+  "sglang_fl_gemma_fused_add_rmsnorm": {
     "native_api": "ops.gemma_fused_add_rmsnorm",
     "shapes": {
       "sglang-v2-c97c757a676da06fabdfab4c2ff1b7a42b48657457703466b87a0d9689ac0efb": {
@@ -2774,7 +2774,7 @@
       }
     }
   },
-  "gemma_rmsnorm": {
+  "sglang_fl_gemma_rmsnorm": {
     "native_api": "ops.gemma_rmsnorm",
     "shapes": {
       "sglang-v1-0d363d1ad16d38f2745b5d16f39effe8103b6460a5a511d3bf924886285e4c70": {
@@ -3983,7 +3983,7 @@
       }
     }
   },
-  "select_experts": {
+  "sglang_fl_select_experts": {
     "native_api": "ops.select_experts",
     "shapes": {
       "sglang-v1-36c9716365299f7cec2eee9c06b4cb02fe8585ef6d7bbfd40f8fcfb42374ed10": {
@@ -4266,7 +4266,7 @@
       }
     }
   },
-  "silu_and_mul_out": {
+  "sglang_fl_silu_and_mul_out": {
     "native_api": "ops.silu_and_mul_out",
     "shapes": {
       "sglang-v1-3f6cd76735a0f25796bb0b339b113c58b7c8af6d26986c57d9615f589b834732": {
